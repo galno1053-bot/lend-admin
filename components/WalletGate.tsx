@@ -2,7 +2,7 @@
 
 import { PropsWithChildren } from "react";
 import { useAccount, useChainId, useConnect, useDisconnect, useSwitchChain } from "wagmi";
-import { injected } from "wagmi/connectors/injected";
+import { injected } from "wagmi/connectors";
 import { useAdminConfig } from "../app/providers";
 import { TARGET_CHAIN_ID } from "../lib/config";
 
