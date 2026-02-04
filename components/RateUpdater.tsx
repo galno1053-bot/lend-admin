@@ -39,7 +39,7 @@ export default function RateUpdater() {
     try {
       const numericRate = Number(rate);
       if (!numericRate || numericRate <= 0) {
-        throw new Error("Rate tidak valid");
+        throw new Error("Invalid rate");
       }
       const rateWithDecimals = BigInt(Math.round(numericRate * 1e8));
       const hash = await writeContractAsync({
@@ -50,7 +50,7 @@ export default function RateUpdater() {
       });
       await publicClient.waitForTransactionReceipt({ hash });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Gagal update rate");
+      setError(err instanceof Error ? err.message : "Rate update failed");
     } finally {
       setLoading(false);
     }
@@ -66,7 +66,7 @@ export default function RateUpdater() {
         Updated: {usdIdrUpdatedAt.data ? formatTimestamp(usdIdrUpdatedAt.data) : "-"}
       </div>
       {isStale.data && (
-        <div className="text-xs text-amber-200">Rate stale lebih dari 60 menit.</div>
+        <div className="text-xs text-amber-200">Rate is stale (older than 60 minutes).</div>
       )}
 
       <input

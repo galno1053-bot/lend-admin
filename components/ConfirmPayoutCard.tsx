@@ -56,13 +56,13 @@ export default function ConfirmPayoutCard({
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error ?? "Gagal mengambil bank details");
+        throw new Error(data.error ?? "Failed to fetch bank details");
       }
 
       const data = await res.json();
       setBankDetails(data);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Gagal mengambil bank details");
+      setError(err instanceof Error ? err.message : "Failed to fetch bank details");
     } finally {
       setLoading(false);
     }
@@ -82,7 +82,7 @@ export default function ConfirmPayoutCard({
       });
       await publicClient.waitForTransactionReceipt({ hash });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Gagal confirm payout");
+      setError(err instanceof Error ? err.message : "Confirm payout failed");
     } finally {
       setLoading(false);
     }
@@ -103,9 +103,9 @@ export default function ConfirmPayoutCard({
 
       {bankDetails && (
         <div className="text-xs text-white/70 space-y-1">
-          <div>Nama: {bankDetails.recipient_name}</div>
+          <div>Name: {bankDetails.recipient_name}</div>
           <div>Bank: {bankDetails.bank_name}</div>
-          <div>Rekening: {bankDetails.account_number}</div>
+          <div>Account: {bankDetails.account_number}</div>
           <div>Wallet: {bankDetails.wallet_address}</div>
         </div>
       )}

@@ -51,7 +51,7 @@ export default function PayoutsPage() {
     <main className="min-h-screen px-6 py-10">
       <header className="flex items-center justify-between">
         <Link href="/" className="text-lg font-display">
-          Pinjaman Admin
+          Naxa Finance Admin
         </Link>
         <div className="text-sm text-white/60">Payouts</div>
       </header>
@@ -60,7 +60,7 @@ export default function PayoutsPage() {
         <WalletGate>
           <div className="grid gap-4">
             {payoutItems.length === 0 && (
-              <div className="text-white/60 text-sm">Tidak ada payout pending.</div>
+              <div className="text-white/60 text-sm">No pending payouts.</div>
             )}
             {payoutItems.map((item) => (
               <ConfirmPayoutCard

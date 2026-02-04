@@ -5,7 +5,7 @@ export default function AdminHome() {
   return (
     <main className="min-h-screen px-6 py-10">
       <header className="flex items-center justify-between">
-        <div className="text-lg font-display">Pinjaman Admin</div>
+        <div className="text-lg font-display">Naxa Finance Admin</div>
         <div className="text-sm text-white/60">Dashboard</div>
       </header>
 

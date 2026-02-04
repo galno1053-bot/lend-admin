@@ -16,8 +16,8 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Pinjaman Hybrid - Admin",
-  description: "Admin panel pinjaman hybrid"
+  title: "Naxa Finance - Admin",
+  description: "Hybrid loan admin panel"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     .filter(Boolean);
 
   return (
-    <html lang="id" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="min-h-screen bg-admin-gradient">
         <Providers allowlist={allowlist}>{children}</Providers>
       </body>

@@ -33,7 +33,7 @@ export default function WalletGate({ children }: PropsWithChildren) {
   if (!isAllowed) {
     return (
       <div className="glass-card p-6 text-rose-200">
-        Wallet tidak terdaftar sebagai admin.
+        This wallet is not allowlisted as admin.
         <button
           onClick={() => disconnect()}
           className="mt-4 rounded-xl border border-white/20 px-4 py-2 text-xs text-white/70"
@@ -47,7 +47,7 @@ export default function WalletGate({ children }: PropsWithChildren) {
   if (chainId !== TARGET_CHAIN_ID) {
     return (
       <div className="glass-card p-6">
-        <div className="text-sm text-white/70 mb-3">Network salah.</div>
+        <div className="text-sm text-white/70 mb-3">Wrong network.</div>
         <button
           onClick={() => switchChain({ chainId: TARGET_CHAIN_ID })}
           className="rounded-xl bg-amber-300 text-slate-900 px-4 py-2 text-sm font-semibold"

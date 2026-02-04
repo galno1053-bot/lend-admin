@@ -35,7 +35,7 @@ export default function ConfirmRepayCard({
       });
       await publicClient.waitForTransactionReceipt({ hash });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Gagal confirm repay");
+      setError(err instanceof Error ? err.message : "Confirm repay failed");
     } finally {
       setLoading(false);
     }

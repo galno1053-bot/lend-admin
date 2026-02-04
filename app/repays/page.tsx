@@ -50,7 +50,7 @@ export default function RepaysPage() {
     <main className="min-h-screen px-6 py-10">
       <header className="flex items-center justify-between">
         <Link href="/" className="text-lg font-display">
-          Pinjaman Admin
+          Naxa Finance Admin
         </Link>
         <div className="text-sm text-white/60">Repays</div>
       </header>
@@ -59,7 +59,7 @@ export default function RepaysPage() {
         <WalletGate>
           <div className="grid gap-4">
             {repayItems.length === 0 && (
-              <div className="text-white/60 text-sm">Tidak ada repay request.</div>
+              <div className="text-white/60 text-sm">No repay requests.</div>
             )}
             {repayItems.map((item) => (
               <ConfirmRepayCard

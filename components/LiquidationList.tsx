@@ -30,14 +30,14 @@ export default function LiquidationList({ items }: { items: Item[] }) {
       });
       await publicClient.waitForTransactionReceipt({ hash });
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Gagal liquidate");
+      setError(err instanceof Error ? err.message : "Liquidation failed");
     } finally {
       setLoadingId(null);
     }
   };
 
   if (!items.length) {
-    return <div className="text-sm text-white/60">Tidak ada posisi liquidatable.</div>;
+    return <div className="text-sm text-white/60">No liquidatable positions.</div>;
   }
 
   return (
